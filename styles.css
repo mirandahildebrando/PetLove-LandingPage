@@ -1263,3 +1263,10 @@ body.dark-theme .btn-full:hover {
   font-weight: 700;
   margin-bottom: 16px;
 }
+
+/* Esconde o selo/badge automático do Netlify */
+.netlify-badge, 
+[data-netlify-deploy-id], 
+iframe[src*="netlify"] {
+    display: none !important;
+}
