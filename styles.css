@@ -1004,24 +1004,18 @@ body.dark-theme .whatsapp-cta {
 }
 
 .social-icons a {
-  width: 40px;
-  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
   transition: var(--transition);
   font-size: 1.1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .social-icons a:hover {
-  background: var(--primary);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
-  border-color: transparent;
+  color: var(--primary);
 }
 
 .footer-bottom {

@@ -57,4 +57,8 @@ petlove-landingpage/
 
 ---
 
+<<<<<<< HEAD
 *Desenvolvido com ❤️ para pets e seus tutores.*
+=======
+*Desenvolvido com ❤️ para pets e seus tutores.*
+>>>>>>> 28777bf (update)
