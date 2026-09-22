@@ -1,64 +1,36 @@
-# PetLove Landing Page
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Uma landing page responsiva para um serviço de banho e tosa de pets, desenvolvida com HTML, CSS e JavaScript puro.
+## Getting Started
 
-## ✨ Funcionalidades
+First, run the development server:
 
-- Design responsivo que funciona em mobile e desktop
-- Menu hamburguer para navegação em telas pequenas
-- Seções animadas que aparecem ao rolar a página
-- Contadores animados para estatísticas
-- Galeria de imagens interativa
-- Seção de depoimentos de clientes
-- Integração direta com WhatsApp para agendamentos
-- Tema escuro/claro automático baseado nas preferências do sistema
-
-## 🛠️ Como usar localmente
-
-1. Clone ou baixe este repositório
-2. Abra o arquivo `index.html` no seu navegador
-3. Pronto! Não é necessário instalar nenhuma dependência
-
-## 💻 Tecnologias utilizadas
-
-- HTML5 Semântico
-- CSS3 (com variáveis, flexbox e grid)
-- JavaScript ES6+
-- Google Fonts (Poppins e Inter)
-- Ícones emoji para elementos visuais
-
-## 🚀 Deploy
-
-Este site pode ser facilmentedeployado em qualquer serviço de hospedagem de sites estáticos:
-- Vercel
-- Netlify
-- GitHub Pages
-- Ou qualquer outro serviço semelhante
-
-## 📝 Aprendizados
-
-Este projeto foi desenvolvido como parte do meu aprendizado em desenvolvimento web, focando em:
-- Estrutura HTML semântica
-- CSS moderno com variáveis e responsividade
-- JavaScript puro para interações (sem frameworks)
-- Boas práticas de acessibilidade básica
-- Animações suaves com CSS
-
-## 📁 Estrutura do projeto
-
-```
-petlove-landingpage/
-├── index.html          # Página principal
-├── styles.css          # Todos os estilos
-├── script.js           # Funcionalidades interativas
-├── assets/             # Imagens, vídeos e outros media
-└── README.md           # Este arquivo
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-<<<<<<< HEAD
-*Desenvolvido com ❤️ para pets e seus tutores.*
-=======
-*Desenvolvido com ❤️ para pets e seus tutores.*
->>>>>>> 28777bf (update)
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
