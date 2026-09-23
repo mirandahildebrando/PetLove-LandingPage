@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "petlove_ofanimals - Banho e Tosa",
+  title: "Pet Love Of Animals - Banho e Tosa",
   description: "Serviços profissionais de banho, tosa e cuidados especiais para o seu pet, cuidando com amor e dedicação.",
 };
 

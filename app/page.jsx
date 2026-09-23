@@ -1,12 +1,10 @@
 "use client";
 // @ts-nocheck
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [statsVisible, setStatsVisible] = useState(false);
-  const navbarRef = useRef(null);
 
   // Mobile menu toggle
   const toggleMenu = () => {
@@ -58,45 +56,45 @@ export default function Home() {
     };
   }, []);
 
-  // Counter animation for stats
-  useEffect(() => {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting && !entry.target.dataset.animating) {
-          entry.target.dataset.animating = 'true';
-          const target = parseInt(entry.target.dataset.target);
-          let current = 0;
-          const increment = target / 50;
-          const duration = 1500;
-          const stepTime = duration / 50;
+// Counter animation for stats
+   useEffect(() => {
+     const statNumbers = document.querySelectorAll('.stat-number');
+     const counterObserver = new IntersectionObserver((entries) => {
+       entries.forEach(entry => {
+         if (entry.isIntersecting && !entry.target.dataset.animating) {
+           entry.target.dataset.animating = 'true';
+           const target = parseInt(entry.target.dataset.target);
+           let current = 0;
+           const increment = target / 50;
+           const duration = 1500;
+           const stepTime = duration / 50;
 
-          const counter = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              entry.target.textContent = target;
-              clearInterval(counter);
-            } else {
-              entry.target.textContent = Math.floor(current);
-            }
-          }, stepTime);
-        }
-      });
-    }, { threshold: 0.5 });
+           const counter = setInterval(() => {
+             current += increment;
+             if (current >= target) {
+               entry.target.textContent = target;
+               clearInterval(counter);
+             } else {
+               entry.target.textContent = Math.floor(current);
+             }
+           }, stepTime);
+         }
+       });
+     }, { threshold: 0.5 });
 
-    statNumbers.forEach(el => {
-      counterObserver.observe(el);
-    });
+     statNumbers.forEach(el => {
+       counterObserver.observe(el);
+     });
 
-    return () => {
-      counterObserver.disconnect();
-    };
-  }, []);
+     return () => {
+       counterObserver.disconnect();
+     };
+   }, []);
 
   // Smooth scroll for anchor links
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function() {
         const targetId = this.getAttribute('href');
         if (targetId === '#') return;
         
@@ -129,7 +127,11 @@ export default function Home() {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
         <div className="nav-container">
-          <div className="logo">Petlove</div>
+          <div className="logo">
+            <span>Pet Love</span>
+            <br />
+            <span>Of Animals</span>
+          </div>
           <ul className="nav-links" id="navLinks">
             <li><a href="#home" onClick={closeMenu}>Início</a></li>
             <li><a href="#servicos" onClick={closeMenu}>Serviços</a></li>
@@ -146,15 +148,16 @@ export default function Home() {
 
       <main>
         <section className="hero" id="home">
+          <video autoPlay muted loop playsInline className="hero-video" poster="/assets/fotos/dog2.jpg">
+            <source src="/assets/fotos/hero.mp4" type="video/mp4" />
+            Seu navegador não suporta vídeo.
+          </video>
           <div className="hero-overlay"></div>
           <div className="hero-content">
             <h1 className="hero-title">
               <span className="line">Banho e tosa</span>
               <span className="line">que seu pet merece</span>
             </h1>
-            <div className="hero-badge">
-              <span className="badge-text">Primeiro banho com 20% de desconto!</span>
-            </div>
             <div className="hero-ctas">
               <a href="https://wa.me/5511976105169?text=Ol%C3%A1%21+Vi+seu+site+e+quero+agendar+um+banho+e+tosa+para+meu+pet." 
                  target="_blank" 
@@ -177,11 +180,6 @@ export default function Home() {
               <div className="stat">
                 <span className="stat-number" data-target="100">0</span>
                 <span className="stat-label">% Satisfação</span>
-              </div>
-            </div>
-            <div className="hero-scroll">
-              <div className="scroll-mouse">
-                <div className="scroll-wheel"></div>
               </div>
             </div>
           </div>
@@ -268,7 +266,7 @@ export default function Home() {
           </div>
         </section>
 
-<section className="section testimonials">
+        <section className="section testimonials">
           <div className="container">
             <h2 className="section-title">O Que Dizem Dos Nossos Pets</h2>
             <div className="testimonials-grid reveal">
@@ -335,7 +333,11 @@ export default function Home() {
             <p className="section-subtitle">Agendamentos realizados exclusivamente pelo WhatsApp para melhor atendimento</p>
             <div className="contact-wrapper" style={{ display: 'block', textAlign: 'center' }}>
               <div className="contact-simple" style={{ display: 'inline-block' }}>
-                <p className="contact-message">PetLove: Mais de 1.500 pets cuidados com muito carinho.</p>
+                <p className="contact-message">
+                  Pet Love
+                  <br />
+                  Of Animals: Mais de 1.500 pets cuidados com muito carinho.
+                </p>
                 <a href="https://wa.me/5511976105169?text=Ol%C3%A1%21+Vi+seu+site+e+quero+agendar+um+banho+e+tosa+para+meu+pet." 
                    className="btn btn-primary">
                   Agendar pelo WhatsApp
@@ -350,7 +352,11 @@ export default function Home() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <h3>petlove_ofanimals</h3>
+              <h3>
+                <span>Pet Love</span>
+                <br />
+                <span>Of Animals</span>
+              </h3>
               <p>Serviços profissionais de banho, tosa e cuidados especiais para o seu pet, cuidando com amor e dedicação.</p>
             </div>
             <div className="footer-links">
@@ -366,7 +372,9 @@ export default function Home() {
                 <a href="https://instagram.com/petlove_ofanimals" target="_blank" aria-label="Instagram">
                   <img src="/assets/fotos/Instagram_logo_2016.svg.webp" alt="Instagram" 
                        style={{ width: '20px', height: '20px', marginRight: '6px', verticalAlign: 'middle' }} />
-                  @petlove_ofanimals
+                  @Pet Love
+                  <br />
+                  Of Animals
                 </a>
               </div>
               <div style={{ marginTop: '16px', fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)' }}>
@@ -377,9 +385,15 @@ export default function Home() {
                 <span>1.371 seguindo</span>
               </div>
             </div>
-          </div>
-          <div className="footer-bottom">
-            <p>&copy; 2025 petlove_ofanimals. Todos os direitos reservados.</p>
+            <div className="footer-bottom">
+              <p>
+                &copy; 2025
+                <br />
+                Pet Love
+                <br />
+                Of Animals. Todos os direitos reservados.
+              </p>
+            </div>
           </div>
         </div>
       </footer>

@@ -56,7 +56,7 @@ a {
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 16px 0;
+  padding: 12px 0;
   transition: var(--transition);
 }
 
@@ -64,7 +64,7 @@ a {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-  padding: 10px 0;
+  padding: 8px 0;
 }
 
 .nav-container {
@@ -78,7 +78,7 @@ a {
 
 .logo {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
+  font-size: 1.152rem;
   font-weight: 800;
   background: var(--gradient);
   -webkit-background-clip: text;
@@ -964,7 +964,7 @@ body.dark-theme .whatsapp-cta {
 }
 
 .footer-brand h3 {
-  font-size: 1.6rem;
+  font-size: 0.768rem;
   color: white;
   margin-bottom: 12px;
   background: var(--gradient-light);
@@ -1010,7 +1010,7 @@ body.dark-theme .whatsapp-cta {
   background: transparent;
   border: none;
   transition: var(--transition);
-  font-size: 1.1rem;
+  font-size: 0.64rem;
   color: white;
 }
 
@@ -1259,7 +1259,7 @@ body.dark-theme .btn-full:hover {
 }
 
 .contact-message {
-  font-size: 1.25rem;
+  font-size: 0.64rem;
   font-weight: 700;
   margin-bottom: 16px;
 }
